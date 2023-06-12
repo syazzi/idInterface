@@ -1,28 +1,78 @@
-import React from 'react';
-import {ScrollView, Text, View, ImageBackground} from 'react-native';
+import React, {useEffect, useRef} from 'react';
+import {
+  Animated,
+  Image,
+  ScrollView,
+  Text,
+  View,
+  ImageBackground,
+} from 'react-native';
 import StyleSheet from 'react-native-media-query';
 import PrimaryButton from '../src/components/primaryButton';
 import SecondaryButton from '../src/components/secondaryButton';
-import Image from 'react-native-remote-svg';
 
 export const HomePage = () => {
+  const bounceAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    startAnimation();
+  }, []);
+
+  const startAnimation = () => {
+    Animated.sequence([
+      Animated.timing(bounceAnim, {
+        toValue: 1,
+        duration: 500, // Adjust the duration of each bounce
+        useNativeDriver: true,
+      }),Animated.timing(bounceAnim, {
+        toValue: 0.5,
+        duration: 500, // Adjust the duration of each bounce
+        useNativeDriver: true,
+      }),Animated.timing(bounceAnim, {
+        toValue: 1,
+        duration: 500, // Adjust the duration of each bounce
+        useNativeDriver: true,
+      }),
+      Animated.timing(bounceAnim, {
+        toValue: 0.8,
+        duration: 500, // Adjust the duration of each bounce
+        useNativeDriver: true,
+      }),
+      Animated.timing(bounceAnim, {
+        toValue: 1,
+        duration: 500, // Adjust the duration of each bounce
+        useNativeDriver: true,
+      }),
+    ]).start();
+  };
+
   return (
     <ImageBackground
       source={require('../src/assets/Homepage/HomePageBackground.png')}
       resizeMode="stretch"
       style={styles.homepage}>
       <View style={styles.content}>
-        <Image
-          source={require('../src/assets/Homepage/Wallet_Icon.svg')}
-          style={styles.image}
-        />
+        <Animated.View
+          style={{
+            transform: [
+              {
+                translateY: bounceAnim.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [100, 50], // Adjust the output range to control the bounce intensity
+                }),
+              },
+            ],
+          }}>
+        
+            <Image source={require('../src/assets/Homepage/wallet_1.png')}
+            style={styles.image}/>
+          </Animated.View>
       </View>
 
       <View>
         <Text style={styles.titleText}>Welcome</Text>
       </View>
-      <View
-        style={styles.subtitleContainer}>
+      <View style={styles.subtitleContainer}>
         <Text style={styles.subtitleText}>
           Would you like to use your existing wallet?
         </Text>
@@ -47,13 +97,14 @@ const {styles} = StyleSheet.create({
     padding: 10,
   },
   content: {
-    marginBottom: 50,
+    paddingLeft:10,
+    marginBottom: 70,
     '@media (max-width: 370px)': {
       marginBottom: 30,
     },
   },
   image: {
-    height: 231,
+    height: 245,
     width: 245,
     '@media (max-width: 370px)': {
       height: 200,
@@ -86,10 +137,8 @@ const {styles} = StyleSheet.create({
       fontSize: 18,
     },
   },
-  subtitleContainer: 
-    {
-      paddingHorizontal: 20,
-      '@media (max-width: 370px)': {paddingHorizontal: 28},
-    }
-  
+  subtitleContainer: {
+    paddingHorizontal: 20,
+    '@media (max-width: 370px)': {paddingHorizontal: 28},
+  },
 });

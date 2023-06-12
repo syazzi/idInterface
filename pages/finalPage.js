@@ -1,6 +1,5 @@
 import React from 'react';
-import {Text, View, ImageBackground} from 'react-native';
-import Image from 'react-native-remote-svg';
+import {Text, View, Image, ImageBackground} from 'react-native';
 import StyleSheet from 'react-native-media-query';
 
 export const FinalPage = () => {
@@ -9,22 +8,20 @@ export const FinalPage = () => {
       source={require('../src/assets/finalPage/FinalBackground.png')}
       style={{flex: 1, justifyContent: 'center'}}
       resizeMode="stretch">
-      <View>
-        <View style={styles.imageContainer}>
-          <Image
-            source={require('../src/assets/finalPage/Verify_Icon.svg')}
-            style={styles.image}
-          />
-        </View>
+      <View style={styles.imageContainer}>
+      <Image
+        style={styles.image}
+        source={require('../src/assets/finalPage/recruitment1.gif')}
+      />
+      </View>
 
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>Almost There</Text>
-        </View>
-        <View style={styles.contentContainer}>
-          <Text style={styles.content}>
-            Please wait while we verify your identity
-          </Text>
-        </View>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>Almost There</Text>
+      </View>
+      <View style={styles.contentContainer}>
+        <Text style={styles.content}>
+          Please wait while we verify your identity
+        </Text>
       </View>
     </ImageBackground>
   );
@@ -42,7 +39,8 @@ const {styles} = StyleSheet.create({
     },
   },
   titleContainer: {
-    marginTop: 60,
+    // marginTop: 60,
+    marginTop: 40,
     '@media (max-width: 370px)': {
       marginTop: 40,
     },
@@ -64,18 +62,21 @@ const {styles} = StyleSheet.create({
     },
   },
   image: {
-    width: 227,
+    width: "100%",
+    height:"100%",
     '@media (max-width: 370px)': {
       width: 200,
     },
   },
   imageContainer: {
     alignSelf: 'center',
-    marginLeft: '13%',
-    marginTop: 20,
+    backgroundColor:'black',
+    height: 200,
+    width: 200,
+    // marginTop: 20,
+    marginTop: 40,
     '@media (max-width: 370px)': {
       marginTop: 28,
     },
   },
 });
-

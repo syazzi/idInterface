@@ -9,7 +9,7 @@ import ImageVerificationPage from './pages/imageVerificationPage';
 
 const App = () => {
   return (
-      <FinalPage/>
+      <HomePage/>
   );
 };
 
