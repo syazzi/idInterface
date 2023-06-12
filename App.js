@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import { HomePage } from './pages/homePage';
 import { StartPage } from './pages/startPage';
@@ -6,8 +6,12 @@ import { FaceRecognitionPage } from './pages/faceRecognitionPage';
 import { FinalPage } from './pages/finalPage';
 import ImageCapture from './pages/imageCapture';
 import ImageVerificationPage from './pages/imageVerificationPage';
+import SplashScreen from 'react-native-splash-screen'
 
 const App = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, [])
   return (
       <HomePage/>
   );
