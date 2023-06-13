@@ -9,10 +9,10 @@ export const FinalPage = () => {
       style={{flex: 1, justifyContent: 'center'}}
       resizeMode="stretch">
       <View style={styles.imageContainer}>
-      <Image
-        style={styles.image}
-        source={require('../src/assets/finalPage/recruitment1.gif')}
-      />
+        <Image
+          style={styles.image}
+          source={require('../src/assets/finalPage/recruitment1.gif')}
+        />
       </View>
 
       <View style={styles.titleContainer}>
@@ -62,21 +62,21 @@ const {styles} = StyleSheet.create({
     },
   },
   image: {
-    width: "100%",
-    height:"100%",
-    '@media (max-width: 370px)': {
-      width: 200,
-    },
+    width: '100%',
+    height: '100%',
   },
+
   imageContainer: {
     alignSelf: 'center',
-    backgroundColor:'black',
+    backgroundColor: 'black',
     height: 200,
     width: 200,
     // marginTop: 20,
     marginTop: 40,
     '@media (max-width: 370px)': {
-      marginTop: 28,
+      marginTop: 60,
+      height: 160,
+      width: 160,
     },
   },
 });

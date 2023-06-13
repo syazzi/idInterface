@@ -64,7 +64,7 @@ export const HomePage = () => {
             ],
           }}>
         
-            <Image source={require('../src/assets/Homepage/wallet_1.png')}
+            <Image source={require('../src/assets/Homepage/wallet2.png')}
             style={styles.image}/>
           </Animated.View>
       </View>
@@ -100,7 +100,7 @@ const {styles} = StyleSheet.create({
     paddingLeft:10,
     marginBottom: 70,
     '@media (max-width: 370px)': {
-      marginBottom: 30,
+      marginBottom: 50,
     },
   },
   image: {

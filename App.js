@@ -13,7 +13,7 @@ const App = () => {
     SplashScreen.hide();
   }, [])
   return (
-      <HomePage/>
+      <FinalPage/>
   );
 };
 
