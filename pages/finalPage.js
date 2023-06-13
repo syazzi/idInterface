@@ -68,7 +68,6 @@ const {styles} = StyleSheet.create({
 
   imageContainer: {
     alignSelf: 'center',
-    backgroundColor: 'black',
     height: 200,
     width: 200,
     // marginTop: 20,
